@@ -23,4 +23,52 @@ In this case, the following options are used:
 
 ![](images/netstat.png)
 
-Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/08/02/how-to-search-opened-ports-in-linux/)
+## Using ss
+
+ss is a utility to investigate sockets. It’s faster and more informative than netstat. Check open ports:
+```
+sudo ss -tuln
+```
+The utility uses the following keys:
+
+- -t: show TCP ports;
+- -u: show UDP ports;
+- -l: show only listening ports;
+- -n: show numerical addresses.
+
+![](images/ss.png)
+
+## Using lsof
+
+lsof (list open files) can also be used to check open ports. Install lsof (if not already installed):
+```
+sudo apt-get install lsof
+```
+Check open ports:
+```
+sudo lsof -i -P -n | grep LISTEN
+```
+lsof uses the following options:
+
+- -i: selects the listing of files any of whose Internet address matches the address specified;
+- -P: inhibits the conversion of port numbers to port names for network files;
+- -n: Inhibits the conversion of network numbers to host names.
+
+![](images/lsof.png)
+
+## Using nmap
+
+nmap is a network scanning tool that can also be used to check open ports. Install nmap (if not already installed):
+```
+sudo apt-get install nmap
+```
+Then scan for open ports:
+```
+sudo nmap -sT -O localhost
+```
+The following options are used here:
+
+- -sT: TCP connect scan;
+- -O: Enable OS detection.
+
+![](images/nmap.png)
