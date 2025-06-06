@@ -23,4 +23,13 @@ There are several types of RAID configurations.
 
 ![](images/raid1.png)
 
+## RAID 5 (Striping with Parity)
+**Description:** Data and parity information are striped across three or more disks.
+
+**Advantages:** Good balance of performance, redundancy, and storage efficiency.
+
+**Disadvantages:** Write performance can be slower due to parity calculations; requires at least three disks.
+
+**Use Case:** File and application servers where read speed and redundancy are important.
+
 Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/08/06/raid-levels/)
