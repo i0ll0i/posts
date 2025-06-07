@@ -64,7 +64,7 @@ Provide a username and password for the WebLogic Admin account. The default user
 
 ![](images/admin-account.png)
 
-Choose either Development for development purposes or Production for a production environment. Ensure that the JDK points to the correct version.
+Choose either `Development` for development purposes or `Production` for a production environment. Ensure that the JDK points to the correct version.
 
 ![](images/domain-mode-and-jdk.png)
 
