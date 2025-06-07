@@ -9,4 +9,16 @@ After that use the search function to find the user – make a right-click on th
 
 ![](images/find-user.png)
 
-Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/07/30/how-to-search-for-a-users-location-within-active-directory/)
+In the search results, right-click the user and select Properties. With Advanced Features enabled, the Object tab should now be visible, showing the canonical name of object, which includes the user’s location within the directory.
+
+![](images/user-properties.png)
+
+## Using PowerShell
+
+You can use PowerShell to find the OU of a user. Here is a command that will help you find out:
+
+Get-ADUser -Identity username -Properties CanonicalName | Select-Object CanonicalName
+
+Replace your-user with the actual username.
+
+The output of the command will look something like this:
