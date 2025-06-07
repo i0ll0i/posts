@@ -16,9 +16,13 @@ In the search results, right-click the user and select Properties. With Advanced
 ## Using PowerShell
 
 You can use PowerShell to find the OU of a user. Here is a command that will help you find out:
-
+```
 Get-ADUser -Identity username -Properties CanonicalName | Select-Object CanonicalName
-
+```
 Replace your-user with the actual username.
 
 The output of the command will look something like this:
+
+![](images/powershell.png)
+
+So we looked at how to find the user’s location within Active Directory using ADUC and PowerShell.
