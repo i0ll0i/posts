@@ -68,7 +68,7 @@ Choose either `Development` for development purposes or `Production` for a produ
 
 ![](images/domain-mode-and-jdk.png)
 
-In the next screen, select `Administration Server`. Choose `Node Manager` if you plan to manage multiple Managed Servers or set up clusters. The Topology option is necessary if you’re going beyond a simple single-server setup.
+In the next screen, select `Administration Server`. Choose `Node Manager` if you plan to manage multiple Managed Servers or set up clusters. The `Topology` option is necessary if you’re going beyond a simple single-server setup.
 
 ![](images/advanced-configuration.png)
 
