@@ -37,9 +37,11 @@ After that, move the created line to the top of the list by clicking `Move Up` b
 Then close the windows by clicking `OK` button.
 
 After setting up the environment variables, verify that Java is installed correctly. Open a command prompt and type the following command to display the Java version on the screen:
-
+Then create the directory for the future Minecraft server. For example, name it `minecraft`:
+```
 java -version
-
+Then create the directory for the future Minecraft server. For example, name it `minecraft`:
+```
 You should see output similar to:
 
 ![](images/java-version.png)
