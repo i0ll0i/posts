@@ -40,8 +40,9 @@ After setting up the environment variables, verify that Java is installed correc
 Then create the directory for the future Minecraft server. For example, name it `minecraft`:
 ```
 java -version
-Then create the directory for the future Minecraft server. For example, name it `minecraft`:
 ```
+Then create the directory for the future Minecraft server. For example, name it `minecraft`:
+
 You should see output similar to:
 
 ![](images/java-version.png)
