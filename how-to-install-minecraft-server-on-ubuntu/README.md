@@ -92,7 +92,30 @@ java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
 ## Connecting to the Game
 
-After launching the server you can already connect to the virtual Minecraft world from a local computer. To do this, you need to use the launcher software that is used to launch the game. The launcher downloads the necessary files and resources, checks the integrity of the game, updates the client if there are updates available, and then launches the game itself. To install the launcher download the appropriate installer and run it to install the necessary software on your computer.
+After launching the server you can already connect to the virtual Minecraft world from a local computer. To do this, you need to use the launcher software that is used to launch the game. The launcher downloads the necessary files and resources, checks the integrity of the game, updates the client if there are updates available, and then launches the game itself. To install the launcher [download the appropriate installer](https://tlauncher.ru/) and run it to install the necessary software on your computer.
 
-Once the launcher have been installed, launch it. Then, at the bottom of its interface, specify the name of your player, the version of the game and click Install:
+Once the launcher have been installed, launch it. Then, at the bottom of its interface, specify the name of your player, the version of the game and click `Install`:
 
+![](images/tlauncher.png)
+
+After some time, which will take to install the game in the launcher and restart it, select `Multiplayer` in the menu:
+
+![](images/multiplayer.png)
+
+To connect the launcher to your server, click the `Direct Connection` button:
+
+![](images/direct-connection.png)
+
+Enter the IP address of your Minecraft server In the `Server Address` line and click `Join Server`:
+
+![](images/join-server.png)
+
+After that you will find yourself in the virtual world of Minecraft, which is deployed on your virtual dedicated server. Weclome!
+
+![](images/game.png)
+
+## Conclusion
+
+So we looked at how to install Minecraft server on Ubuntu 24.04.
+
+Installing Minecraft server is a rewarding experience that opens up endless possibilities for customization and multiplayer gameplay. By following the steps outlined in this guide, you can successfully install and configured your server, allowing you to host your own Minecraft world. Whether you’re hosting a private game for friends or building a large community, maintaining your server will be key to your success. Happy gaming!
