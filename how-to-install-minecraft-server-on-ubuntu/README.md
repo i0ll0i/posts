@@ -21,7 +21,7 @@ And navigate the created directory:
 ```
 cd minecraft
 ```
-Next, get the download link for the latest version from the download page.
+Next, get the download link for the latest version from the [download page(https://www.minecraft.net/en-us/download/server)].
 
 ![](images/download-page.png)
 
