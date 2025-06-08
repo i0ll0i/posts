@@ -18,4 +18,33 @@ After installation, you’ll need to set up the necessary environment variables 
 
 ![](images/environment-variables.png)
 
-Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/09/23/how-to-install-jdk-8-on-windows-server/)
+Under `System Variables`, click `New` and add a new variable `JAVA_HOME` that contains the path to your JDK installation as the variable value.
+
+![](images/JAVA_HOME.png)
+
+Close the `New System Variable` window by `OK` button. Then select the `Path` line in the `System variables` window and click `Edit`.
+
+![](images/path.png)
+
+Then click the `New` button and paste the path to the directory that contains all the essential executable files and tools that are part of JDK 8 into the text field that appears. In our example, this directory is `C:\Program Files\Java\jdk1.8.0_202\bin`.
+
+![](images/new.png)
+
+After that, move the created line to the top of the list by clicking `Move Up` button.
+
+![](images/move-up.png)
+
+Then close the windows by clicking `OK` button.
+
+After setting up the environment variables, verify that Java is installed correctly. Open a command prompt and type the following command to display the Java version on the screen:
+
+java -version
+
+You should see output similar to:
+
+![](images/java-version.png)
+
+## Conclusion
+
+So we looked at how to install JDK 8 on Windows Server 2019 and configure the environment variables necessary for the software to function.
+
