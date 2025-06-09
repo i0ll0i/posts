@@ -15,17 +15,17 @@ Press `Ctrl` `Shift` `Esc` to open the Task Manager and go to the `Performance` 
 ## Using Command Prompt
 
 To open the Command Prompt press `Win R`, type `cmd`, then press `Enter`. When the Command Prompt will open, type the following command and press `Enter`:
-
+```
 systeminfo | find "System Boot Time"
-
+```
 This command will display the date and time when the system was last booted. The output of the command will look something like this:
 
 ![](images/system-boot-time.png)
 
 To determine uptime you can also use WMIC (Windows Management Instrumentation Command-line). This command-line tool provides access to a wide range of operating system data. To display the time of the last system start, type in the command line:
-
+```
 wmic os get lastbootuptime
-
+```
 ![](images/lastbootuptime.png)
 
 The output of the command consists of components:
@@ -49,9 +49,9 @@ The output of the command consists of components:
 ## Using PowerShell
 
 Open PowerShell by pressing `Win R`, type `powershell` and press `Enter`. Enter the following command:
-
+```
 (get-date) - (gcim Win32_OperatingSystem).LastBootUpTime
-
+```
 The output will look like this:
 
 ![](images/powershell.png)
