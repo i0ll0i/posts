@@ -78,11 +78,11 @@ mysql -V
 
 The next command is a security script provided by MariaDB to help you improve the security of your database server by guiding you through some essential configuration steps. It prompts you through a series of steps designed to harden the security of your MariaDB instance:
 
-✔  set the root password;
+✔  set the `root` password;
 
 ✔ remove anonymous users;
 
-✔ disable remote root login;
+✔ disable remote `root` login;
 
 ✔ remove the test database;
 
@@ -91,4 +91,72 @@ The next command is a security script provided by MariaDB to help you improve th
 To run the script, type in the command line:
 ```
 sudo mysql_secure_installation
+```
+
+### Install PHP
+
+The default CentOS Stream repositories often contain only the more stable, older versions of software packages. This applies to PHP as well. In the manual, we will install the most recent version of PHP or additional modules that are not available in the default repositories. Therefore, we need to enable external repositories such as EPEL and Remi.
+
+First, install EPEL. EPEL itself doesn’t contain PHP, but it’s a prerequisite because some packages and dependencies for newer PHP versions rely on EPEL.
+```
+sudo dnf install epel-release
+```
+After enabling EPEL, install the Remi repository:
+```
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+```
+Reset the PHP module to avoid conflicts with older versions:
+```
+sudo dnf module reset php
+```
+Enable the desired PHP stream (e.g., PHP 8.3):
+```
+sudo dnf module enable php:remi-8.3
+```
+Install PHP, PHP-FPM (FastCGI Process Manager) and the MySQL Native Driver (mysqlnd) for PHP:
+```
+sudo dnf install php php-fpm php-mysqlnd
+```
+Configure PHP-FPM to work with Nginx. To do this, edit the PHP-FPM configuration file:
+```
+sudo vi /etc/php-fpm.d/www.conf
+```
+Find the line that says `user = apache` and `group = apache`, and change them to `nginx`:
+```
+user = nginx
+group = nginx
+```
+Enable and start PHP-FPM:
+```
+sudo systemctl enable --now php-fpm
+```
+Check the status of the PHP-FPM service:
+```
+systemctl status php-fpm
+```
+![](images/php-fpm-status.png)
+
+Run the next command to test the configuration of the Nginx web server without actually starting or reloading the server:
+```
+sudo nginx -t
+```
+If the configuration is correct, you will see the following:
+
+![](images/nginx-t.png)
+
+Then restart the Nginx service:
+```
+sudo systemctl restart nginx
+```
+To make sure that PHP is installed correctly, create a test page file using the following command:
+```
+echo "<?php phpinfo(); ?>" | sudo tee /usr/share/nginx/html/info.php
+```
+Open the browser and navigate to `http://X.X.X.X/info.php`, where you should replace `X.X.X.X` with the IP address of your server. You should see a PHP information page.
+
+![](images/php-information-page.png)
+
+After confirming PHP is working, delete the file for security reasons:
+```
+sudo rm /usr/share/nginx/html/info.php
 ```
