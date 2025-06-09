@@ -78,11 +78,11 @@ mysql -V
 
 The next command is a security script provided by MariaDB to help you improve the security of your database server by guiding you through some essential configuration steps. It prompts you through a series of steps designed to harden the security of your MariaDB instance:
 
-◦  set the root password;
+✔  set the root password;
 
-◦ remove anonymous users;
+✔ remove anonymous users;
 
-◦ disable remote root login;
+✔ disable remote root login;
 
 ✔ remove the test database;
 
