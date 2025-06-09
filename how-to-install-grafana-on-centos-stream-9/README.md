@@ -63,6 +63,7 @@ To access Grafana interface open your web browser and go to `http://10.10.10.10:
 ![](images/welcome-to-grafana.png)
 
 Use the default credentials to log in:
+
 username: `admin`;
 password: `admin`.
 
