@@ -12,4 +12,55 @@ Press `Ctrl` `Shift` `Esc` to open the Task Manager and go to the `Performance` 
 
 ![](images/task_manager.png)
 
-Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/08/27/how-to-check-system-uptime-in-windows/)
+## Using Command Prompt
+
+To open the Command Prompt press `Win R`, type `cmd`, then press `Enter`. When the Command Prompt will open, type the following command and press `Enter`:
+
+systeminfo | find "System Boot Time"
+
+This command will display the date and time when the system was last booted. The output of the command will look something like this:
+
+![](images/system-boot-time.png)
+
+To determine uptime you can also use WMIC (Windows Management Instrumentation Command-line). This command-line tool provides access to a wide range of operating system data. To display the time of the last system start, type in the command line:
+
+wmic os get lastbootuptime
+
+![](images/lastbootuptime.png)
+
+The output of the command consists of components:
+
+2024 is the year;
+
+08 is the month;
+
+25 is the day;
+
+17 is the hour;
+
+12 is the minute;
+
+11 is the second;
+
+208786 is microseconds;
+
+300 is the timezone offset.
+
+## Using PowerShell
+
+Open PowerShell by pressing `Win R`, type `powershell` and press `Enter`. Enter the following command:
+
+(get-date) - (gcim Win32_OperatingSystem).LastBootUpTime
+
+The output will look like this:
+
+![](images/powershell.png)
+
+These lines contain the following information:
+
+`Days`, `Hours`, `Minutes`, `Seconds`, `Milliseconds`: these properties provide a detailed breakdown of the uptime;
+`Ticks`, `TotalDays`, `TotalHours`, `TotalMinutes`, `TotalSeconds`, `TotalMilliseconds`: these properties provide the total uptime expressed in the respective units.
+
+## Conclusion
+
+So we found out how to check system uptime in Windows using tools like Task Manager, Command Prompt, and PowerShell. Applying this methods you can easily determine how long your system has been running without interruption.
