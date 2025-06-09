@@ -10,4 +10,4 @@ Next, let’s look at how to install the latest MySQL version on CentOS Stream 9
 
 In the case of installation using the MySQL Community Repository, you must download the required version .rpm file. An .rpm file (Red Hat Package Manager file) is a package format used by RHEL-based Linux distributions, including CentOS, to install, update, and manage software.
 
-To download the .rpm file, navigate to MySQL Yum Repository page and click `Download` in the Red Hat Enterprise Linux 9 RPM Package section.
+To download the .rpm file, navigate to [MySQL Yum Repository page](https://dev.mysql.com/downloads/repo/yum/) and click `Download` in the Red Hat Enterprise Linux 9 RPM Package section.
