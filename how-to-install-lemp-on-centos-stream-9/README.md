@@ -164,3 +164,63 @@ After confirming PHP is working, delete the file for security reasons:
 ```
 sudo rm /usr/share/nginx/html/info.php
 ```
+### How to host a website
+
+To host a website, you must first configure the Nginx service.
+
+Create a new server block configuration for your website using the server’s IP address. To do this, open `/etc/nginx/conf.d/default.conf` file:
+```
+sudo vi /etc/nginx/conf.d/default.conf
+```
+Add the following configuration, replacing `X.X.X.X` with your actual server’s IP address:
+```
+server {
+    listen 80 default_server;
+    server_name X.X.X.X;
+    root /var/www/html;
+    index index.php index.html index.htm;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+    location ~ /\.ht {
+        deny all;
+    }
+}
+```
+Then test the configuration of the Nginx server:
+```
+sudo nginx -t
+```
+And restart the Nginx service:
+```
+sudo systemctl restart nginx
+```
+Create the directory for your website files:
+```
+sudo mkdir -p /var/www/html
+```
+Add the home page file in the created directory:
+```
+sudo vi /var/www/html/index.php
+```
+Add the contents of the site’s home page to `index.php` file, for example, this:
+```
+<title>LEMP on CentOS Stream 9</title>
+<p>WELCOME!!!</p>
+<p>This is iolloi test site page!</p>
+```
+Open your browser and follow the link `http://X.X.X.X`, where you should replace `X.X.X.X` with the IP address of your server. If you have done everything correctly, the browser should display your website’s home page.
+
+![](images/website.png)
+
+## Conclusion
+
+In this guide, we have looked at how to install the LEMP stack (Linux, Nginx, MariaDB, PHP) on CentOS Stream 9 and how to host a website using the server’s IP address. By following the steps, you learned how to set up each component of the LEMP stack: installing Nginx for handling web requests, setting up MariaDB for database management, and configuring PHP to process dynamic content. Finally, we showed how to create a basic website directory, configure Nginx to serve the site, and test the setup using the server’s IP address.
+
+With this foundation, your server is ready to host websites and web applications. You can further enhance your setup by adding a domain name, configuring SSL for secure HTTPS connections, or deploying more complex websites like WordPress, Joomla, or custom PHP applications.
