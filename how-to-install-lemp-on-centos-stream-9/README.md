@@ -84,9 +84,9 @@ The next command is a security script provided by MariaDB to help you improve th
 
 ◦ disable remote root login;
 
-◦ remove the test database;
+✔ remove the test database;
 
-◦ reload privilege tables.
+✔ reload privilege tables.
 
 To run the script, type in the command line:
 ```
