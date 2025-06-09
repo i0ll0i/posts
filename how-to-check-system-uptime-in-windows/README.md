@@ -30,21 +30,21 @@ wmic os get lastbootuptime
 
 The output of the command consists of components:
 
-2024 is the year;
+`2024` is the year;
 
-08 is the month;
+`08` is the month;
 
-25 is the day;
+`25` is the day;
 
-17 is the hour;
+`17` is the hour;
 
-12 is the minute;
+`12` is the minute;
 
-11 is the second;
+`11` is the second;
 
-208786 is microseconds;
+`208786` is microseconds;
 
-300 is the timezone offset.
+`300` is the timezone offset.
 
 ## Using PowerShell
 
