@@ -36,3 +36,24 @@ Check the status of the Nginx service:
 ```
 systemctl status nginx
 ```
+![](images/nginx-status.png)
+
+Allow HTTP traffic through the firewall:
+```
+sudo firewall-cmd --permanent --add-service=http
+```
+To display the rules that are permanently applied, run the command:
+```
+sudo firewall-cmd --permanent --list-all
+```
+Make sure that there is `http` entry in the `services` row:
+
+![](images/firewall-list-all.png)
+
+Reload the firewall configuration managed by the `firewalld` service:
+```
+sudo firewall-cmd --reload
+```
+Open a browser and go to your server’s IP address or domain name. If it’s working, you’ll see the default Nginx welcome page.
+
+![](images/nginx-welcome-page.png)
