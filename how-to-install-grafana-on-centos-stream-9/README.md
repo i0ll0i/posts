@@ -30,4 +30,16 @@ Install Grafana:
 ```
 sudo dnf install grafana
 ```
-Continued on the [iolloi.icu](https://iolloi.icu/index.php/2024/09/19/how-to-install-grafana-on-centos-stream-9/)
+Start the Grafana service:
+```
+sudo systemctl start grafana-server
+```
+Enable Grafana to start on boot:
+```
+sudo systemctl enable grafana-server
+```
+To check the status of the service, run the command:
+```
+sudo systemctl status grafana-server
+```
+The output of the command should look like this:
