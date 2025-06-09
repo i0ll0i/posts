@@ -54,6 +54,41 @@ Reload the firewall configuration managed by the `firewalld` service:
 ```
 sudo firewall-cmd --reload
 ```
-Open a browser and go to your server’s IP address or domain name. If it’s working, you’ll see the default Nginx welcome page.
+### Install MariaDB
 
-![](images/nginx-welcome-page.png)
+Install MariaDB with the following command:
+```
+sudo dnf install mariadb-server mariadb
+```
+Enable and start MariaDB:
+```
+sudo systemctl enable --now mariadb
+```
+Check the status of the MariaDB service:
+```
+systemctl status mariadb
+```
+![](images/mariadb-status.png)
+
+Check if the correct version of the MariaDB client is installed or troubleshoot version compatibility issues:
+```
+mysql -V
+```
+![](images/mysql-v.png)
+
+The next command is a security script provided by MariaDB to help you improve the security of your database server by guiding you through some essential configuration steps. It prompts you through a series of steps designed to harden the security of your MariaDB instance:
+
+◦  set the root password;
+
+◦ remove anonymous users;
+
+◦ disable remote root login;
+
+◦ remove the test database;
+
+◦ reload privilege tables.
+
+To run the script, type in the command line:
+```
+sudo mysql_secure_installation
+```
