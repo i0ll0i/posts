@@ -54,6 +54,10 @@ Reload the firewall configuration managed by the `firewalld` service:
 ```
 sudo firewall-cmd --reload
 ```
+Open a browser and go to your server’s IP address or domain name. If it’s working, you’ll see the default Nginx welcome page.
+
+![](images/nginx-welcome-page.png)
+
 ### Install MariaDB
 
 Install MariaDB with the following command:
